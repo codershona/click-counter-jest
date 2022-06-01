@@ -18,6 +18,12 @@ function App() {
       >
         Increment Counter
       </button>
+      <button 
+      data-test="decrement-button"
+      onClick={() => setCount(count - 1)}
+      >
+        Decrement Counter
+      </button>
     </div>
   );
 }
