@@ -18,11 +18,25 @@ function App() {
       >
         Increment Counter
       </button>
+      <br/>
+      <br/>
       <button 
       data-test="decrement-button"
-      onClick={() => setCount(count - 1)}
+      onClick={() => {
+        (count === 0) ? setCount(0) : setCount(count - 1)}
+      }
       >
         Decrement Counter
+      </button>
+      <br/>
+      <br/>
+      <button 
+      data-test="decrement-button-2"
+      onClick={() => {
+        (count === 1) ? setCount(1) : setCount(count - 1)}
+      }
+      >
+        Decrement Counter 2
       </button>
     </div>
   );
