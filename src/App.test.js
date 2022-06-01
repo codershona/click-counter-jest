@@ -65,3 +65,72 @@ test('clicking button increments counter display', () => {
 });
 
 
+test('clicking button decrements 3 counter display', () => {
+  const wrapper = setup();
+  
+  // find the button
+  const decrementButton = findByTestAttr(wrapper, "decrement-button-3");
+
+  // click the Button
+  decrementButton.simulate('click');    
+
+  // find the display, and test which is the number has been incremented
+  const countOne = findByTestAttr(wrapper, "count").text(); // text() method
+  
+  expect(countOne).toBe("0");
+});
+
+
+test('clicking button decrements counter display', () => {
+  const wrapper = setup();
+  
+  // find the button
+  const decrementButton = findByTestAttr(wrapper, "decrement-button");
+
+  // click the Button
+  decrementButton.simulate('click');    
+
+  // find the display, and test which is the number has been incremented
+  const countOne = findByTestAttr(wrapper, "count").text(); // text() method
+  
+  expect(countOne).toBe("0");
+});
+
+test('clicking button decrements 2 counter display', () => {
+  const wrapper = setup();
+  
+  // find the button
+  const decrementButton2 = findByTestAttr(wrapper, "decrement-button-2");
+
+  // click the Button
+  decrementButton2.simulate('click');    
+
+  // find the display, and test which is the number has been incremented
+  const countTwo = findByTestAttr(wrapper, "count").text(); // text() method
+  
+  expect(countTwo).toBe("-1");
+});
+
+test('clicking button decrements error messages counter display', () => {
+  const wrapper = setup();
+  
+  // find the button
+  const decrementButton0 = findByTestAttr(wrapper, "decrement-button");
+
+  // click the Button
+  decrementButton0.simulate('click');    
+
+   // find the button
+   const incrementButton0 = findByTestAttr(wrapper, "increment-button");
+
+   // click the Button
+   incrementButton0.simulate('click');  
+
+  // find the display, and test which is the number has been incremented
+  const errorMessages = findByTestAttr(wrapper, "showErrors") // text() method
+  
+  expect(errorMessages.length).toBe(1);
+});
+
+
+
